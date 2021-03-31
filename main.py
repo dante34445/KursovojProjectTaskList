@@ -8,11 +8,11 @@ from pip._vendor import requests
 root = tkinter.Tk()
 root.title("Список задач")
 
-class joke:
+class secondform:
     cityField = 1
     info = 1
 
-    def jok_class(self):
+    def secondform_class(self):
         root = tkinter.Tk()
         root['bg'] = '#fafafa'
         # название окна
@@ -24,15 +24,15 @@ class joke:
 
         # Создаем фрейм (область для размещения других объектов)
         # Указываем к какому окну он принадлежит, какой у него фон и какая обводка
-        frame_top = tkinter.Frame(root, bg='#ffb700', bd=5)
+        frame_top = tkinter.Frame(root, bg='#fafafa', bd=5)
         # Также указываем его расположение
         frame_top.place(relx=0.15, rely=0.15, relwidth=0.7, relheight=0.25)
 
-        frame_bottom = tkinter.Frame(root, bg='#42aaff', bd=5)
+        frame_bottom = tkinter.Frame(root, bg='#fafafa', bd=5)
         frame_bottom.place(relx=0.15, rely=0.55, relwidth=0.7, relheight=0.1)
 
         # Создаем текстовое поле для получения данных от пользователя
-        self.cityField = tkinter.Entry(frame_top, bg='white', font=30)
+        self.cityField = tkinter.Entry(frame_top, bg='#fafafa', font=30)
         self.city = self.cityField.get()
         self.cityField.pack()  # Размещение этого объекта, всегда нужно прописывать
 
@@ -41,7 +41,7 @@ class joke:
         btn.pack()
 
         # Создаем текстовую надпись, в которую будет выводиться информация о погоде
-        self.info = tkinter.Label(frame_bottom, text='Погодная информация', bg='#42aaff', font=40)
+        self.info = tkinter.Label(frame_bottom, text='Погодная информация', bg='#ade0ed', font=40)
         self.info.pack()
 
         # Запускаем постоянный цикл, чтобы программа работала
@@ -65,8 +65,8 @@ class joke:
 
 
 def get_permission_weather():
-    jokeform = joke
-    jokeform.get_weather(jokeform)
+    secondForm = secondform
+    secondForm.get_weather(secondForm)
 
 
 def add_task():
@@ -75,7 +75,7 @@ def add_task():
         listbox_tasks.insert(tkinter.END, task)
         entry_task.delete(0, tkinter.END)
     else:
-        tkinter.messagebox.showwarning(title="Warning!", message="You must enter a task.")
+        tkinter.messagebox.showwarning(title="Внимание!", message="Поле ввода пусто.")
 
 
 def delete_task():
@@ -83,7 +83,7 @@ def delete_task():
         task_index = listbox_tasks.curselection()[0]
         listbox_tasks.delete(task_index)
     except:
-        tkinter.messagebox.showwarning(title="Warning!", message="You must select a task.")
+        tkinter.messagebox.showwarning(title="Внимание!", message="Вы не выбрали задачу.")
 
 
 def load_tasks():
@@ -93,7 +93,7 @@ def load_tasks():
         for task in tasks:
             listbox_tasks.insert(tkinter.END, task)
     except:
-        tkinter.messagebox.showwarning(title="Warning!", message="Cannot find tasks.dat.")
+        tkinter.messagebox.showwarning(title="Внимание!", message="Невозможно найти tasks.dat.")
 
 
 def save_tasks():
@@ -103,8 +103,8 @@ def save_tasks():
 
 def open_second_form():
     #root.destroy()
-    jokeform = joke
-    jokeform.jok_class(jokeform)
+    secondForm = secondform
+    secondForm.secondform_class(secondForm)
 
 
 # Create GUI
